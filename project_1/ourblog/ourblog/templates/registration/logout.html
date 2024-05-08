@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% block pg_title %} 
+    {{pg_name | title }}
+{% endblock pg_title %}
+<!-- css files here-->
+
+{% block css_style %}
+<link rel="stylesheet" href="{% static "tasks/new.css" %}">
+<link rel="stylesheet" href="{% static "tasks/index.css" %}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+{% endblock css_style %}
+
+
+{% block js_block %}
+<script defer>
+</script>
+{% endblock js_block %}
+
+{% block main_body %}
+
+{% if user.is_authenticated %}
+Hi {{ user.username }}!
+<form action="{% url 'logout' %}" method="post">
+  {% csrf_token %}
+  <button type="submit">Log Out</button>
+</form>
+{% else %}
+<p>You are not logged in</p>
+<a href="{% url 'login' %}">Log In</a>
+
+{% endblock main_body %}
