@@ -1,4 +1,4 @@
-# Axcel_assigment
+# Adscult_assigment
 
 **Note**:The project is on Master branch.
 Clone the directory. 
